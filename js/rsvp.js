@@ -87,7 +87,6 @@ function handleModal(elementId) {
         hiddenField.value = copyText.innerHTML;
         hiddenField.select();
         navigator.clipboard.writeText(hiddenField.value);
-        alert("복사되었습니다");
     }
 }
 
