@@ -26,15 +26,25 @@ function sendKakaoLink() {
 async function sendLink() {
     let websiteData = {
         title: '수지&지웅 결혼합니다',
-        text: '9/2일 토요일 오후 12:00 보코강남호텔',
+        text: '수지&지웅 결혼합니다\n9/2일 토요일 오후 12:00 보코강남호텔',
         url: 'https://sujiwoong.github.io/wedding'
     };
     try {
         let result = await navigator.share(websiteData);
     } catch(err) {
-        console.log(err);
-        window.alert('모바일 전용 기능입니다');
+        if (mobile == false) {
+            alertMobile
+        }
     }
+}
+
+function alertMobile() {
+    console.log("alert")
+    alert("모바일 전용 기능합니다.")
+}
+
+function alertCopied() {
+    alert("복사되었습니다.")
 }
 
 function suzyPhone() {
@@ -87,6 +97,7 @@ function handleModal(elementId) {
         hiddenField.value = copyText.innerHTML;
         hiddenField.select();
         navigator.clipboard.writeText(hiddenField.value);
+        alertCopied();
     }
 }
 
@@ -145,15 +156,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     insertPhoneModal("jiwoong", "김지웅", "010-5193-7978");
     insertPhoneModal("suzy", "김수지", "010-9552-9185");
     insertPhoneModal("jiwoong-parent", "채명숙", "010-3455-8312");
-    insertPhoneModal("suzy-parent", "김종섭", "부모님 번호");
+    insertPhoneModal("suzy-parent", "김종섭", "010-2336-2616");
 
     insertBankAccountModal("jiwoong", "신랑", "카카오뱅크", "김지웅", "3333048754783");
-    insertBankAccountModal("suzy", "신부", "하나은행", "김수지", "123-4567-891011");
+    insertBankAccountModal("suzy", "신부", "하나은행", "김수지", "33689038028007");
     insertBankAccountModal("jiwoong-parent", "신랑측 혼주", "국민은행", "채명숙", "820-21-0396-98");
-    insertBankAccountModal("suzy-parent", "신부측 부모님", "하나은행", "김종섭", "123-4567-891011");
+    insertBankAccountModal("suzy-parent", "신부측 부모님", "하나은행", "김종섭", "149-890324-10205");
 
     const closeModal = function() {
-        console.log("there");
         updateModal(true, overlay, modal);
     } 
     overlay.addEventListener("click", closeModal);
@@ -161,5 +171,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 window.onload = function() {
     Kakao.init('9f6cd19252f35ef0f607f25f1e78b835');
+    var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
 }
 
