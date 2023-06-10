@@ -26,15 +26,12 @@ function sendKakaoLink() {
 async function sendLink() {
     let websiteData = {
         title: '수지&지웅 결혼합니다',
-        text: '수지&지웅 결혼합니다\n9/2일 토요일 오후 12:00 보코강남호텔',
         url: 'https://sujiwoong.github.io/wedding'
     };
-    try {
-        let result = await navigator.share(websiteData);
-    } catch(err) {
-        if (mobile == false) {
-            alertMobile
-        }
+    if (navigator.share) {
+        navigator.share(websiteData)
+    } else {
+        alertMobile();
     }
 }
 
