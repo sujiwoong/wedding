@@ -14,7 +14,7 @@ function dropdownRSVP(e) {
 
 function sendKakaoLink() {
     Kakao.Link.sendScrap({
-    requestUrl: 'http://localhost:5002',
+    requestUrl: 'https://sujiwoong.github.io/wedding',
     templateId: 92087,
     templateArgs: {
         TITLE: '제목',
@@ -25,9 +25,9 @@ function sendKakaoLink() {
 
 async function sendLink() {
     let websiteData = {
-        title: '결혼합니다',
+        title: '수지&지웅 결혼합니다',
         text: '9/2일 토요일 오후 12:00 보코강남호텔',
-        url: 'https://google.com'
+        url: 'https://sujiwoong.github.io/wedding'
     };
     try {
         let result = await navigator.share(websiteData);
@@ -144,12 +144,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const overlay = document.querySelector(".overlay");
     insertPhoneModal("jiwoong", "김지웅", "010-5193-7978");
     insertPhoneModal("suzy", "김수지", "010-9552-9185");
-    insertPhoneModal("jiwoong-parent", "김현동", "부모님 번호");
+    insertPhoneModal("jiwoong-parent", "채명숙", "010-3455-8312");
     insertPhoneModal("suzy-parent", "김종섭", "부모님 번호");
 
-    insertBankAccountModal("jiwoong", "신랑", "신한은행", "김지웅", "123-4567-891011");
+    insertBankAccountModal("jiwoong", "신랑", "카카오뱅크", "김지웅", "3333048754783");
     insertBankAccountModal("suzy", "신부", "하나은행", "김수지", "123-4567-891011");
-    insertBankAccountModal("jiwoong-parent", "신랑측 부모님", "신한은행", "김현동", "123-4567-891011");
+    insertBankAccountModal("jiwoong-parent", "신랑측 혼주", "국민은행", "채명숙", "820-21-0396-98");
     insertBankAccountModal("suzy-parent", "신부측 부모님", "하나은행", "김종섭", "123-4567-891011");
 
     const closeModal = function() {
