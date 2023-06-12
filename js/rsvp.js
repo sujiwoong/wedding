@@ -168,6 +168,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 window.onload = function() {
     Kakao.init('9f6cd19252f35ef0f607f25f1e78b835');
-    var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
 }
 

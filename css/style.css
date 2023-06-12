@@ -81,6 +81,7 @@ time em {
     width: 300px;
     margin: auto;
 }
+
 .calendar-header .button {
     display: inline-block;
     padding: 5px 20px;
@@ -138,12 +139,14 @@ section li {
     font-weight: bold;
     font-size: 10px;
     padding: 0;
+    min-width: 300px;
 }
 
 .m-box--date {
     color: #555;
     font-size: 14px;
     padding: 0;
+    min-width: 300px;
 }
 
 .l-date--passed {
