@@ -10,6 +10,7 @@
     object-fit: cover;
     transition: 0.5s;
     margin: 10px;
+    border-radius: 0.5em;
 }
 .gallery img:hover{
     filter: grayscale(80%);
