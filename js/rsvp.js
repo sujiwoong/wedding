@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     insertBankAccountModal("jiwoong", "신랑", "카카오뱅크", "김지웅", "3333048754783");
     insertBankAccountModal("suzy", "신부", "하나은행", "김수지", "33689038028007");
     insertBankAccountModal("jiwoong-parent", "신랑측 혼주", "국민은행", "채명숙", "820-21-0396-98");
-    insertBankAccountModal("suzy-parent", "신부측 부모님", "하나은행", "김종섭", "149-890324-10205");
+    insertBankAccountModal("suzy-parent", "신부측 혼주", "하나은행", "김종섭", "149-890324-10205");
 
     const closeModal = function() {
         updateModal(true, overlay, modal);
